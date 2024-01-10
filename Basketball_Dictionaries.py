@@ -15,11 +15,10 @@ class Player: # First letter must be capitalized when creating classes name.
     
     @classmethod
     def get_team(cls, team_list):
-        team = []
         for player_dict in team_list:
             player = cls(player_dict)
-            team.append(player)
-        return team
+            cls.newer_team.append(player)
+        return cls.newer_team
 
 # DICTIONARIES that will passed as an argument into the OBJECT/CLASS CONSTRUCTOR.
 
@@ -105,6 +104,5 @@ players = [
 # print(new_team)
 
 # Prints all instances using class method in the innner Player class scope.
-newer_team = Player.get_team(players)
-print(newer_team)
+print(Player.get_team(players))
 # print(player_kevin)
